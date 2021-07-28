@@ -21,49 +21,29 @@ public class Ejecutor {
         Scanner entrada = new Scanner(System.in);
         ArrayList<PlanCelular> plan = new ArrayList<>();
         String n = "Planes.data";
-        String nombre = "";
-        String apellidos = "";
-        String identificacion = "";
-        String ciudad = "";
         int bandera = 0;
         while (bandera != 5) {
             System.out.println("Ingrese el plan que desea.\n1. Plan postPago minutos\n"
                     + "2. Plan postPago megas\n3. Plan postPago minutos megas\n"
                     + "4. Plan postPago minutos megas economico\n5. Salir");
             bandera = entrada.nextInt();
-            if (bandera >= 1 && bandera <= 4) {
-                entrada.nextLine();
-                System.out.println("Ingrese los nombres del cliente");
-                nombre = entrada.nextLine();
-                System.out.println("Ingrese los apellidos del cliente");
-                apellidos = entrada.nextLine();
-                System.out.println("Ingrese su identificación ");
-                identificacion = entrada.nextLine();
-                System.out.println("Ingrese la ciudad en la que reside");
-                ciudad = entrada.nextLine();
-            }
-            
             switch (bandera) {
                 case 1:
-                    PlanPostPagoMinutos(plan, nombre, apellidos, identificacion,
-                            ciudad);
+                    PlanPostPagoMinutos(plan);
                     break;
 
                 case 2:
-                    PlanPostPagoMegas(plan, nombre, apellidos, identificacion,
-                            ciudad);
+                    PlanPostPagoMegas(plan);
                     break;
 
                 case 3:
-                    PlanPostPagoMinutosMegas(plan, nombre, apellidos,
-                            identificacion, ciudad);
+                    PlanPostPagoMinutosMegas(plan);
                     break;
-                
-                case 4: 
-                    PlanPostPagoMinutosEconomico(plan, nombre, apellidos,
-                            identificacion, ciudad);
+
+                case 4:
+                    PlanPostPagoMinutosEconomico(plan);
                     break;
-                    
+
                 case 5:
                     bandera = 5;
                     break;
@@ -88,10 +68,16 @@ public class Ejecutor {
 
     }
 
-    public static void PlanPostPagoMinutos(ArrayList<PlanCelular> plan,
-            String nombre, String apellidos, String identificacion, 
-            String ciudad) {
+    public static void PlanPostPagoMinutos(ArrayList<PlanCelular> plan) {
         Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese los nombres del cliente");
+        String nombre = entrada.nextLine();
+        System.out.println("Ingrese los apellidos del cliente");
+        String apellidos = entrada.nextLine();
+        System.out.println("Ingrese su identificación ");
+        String identificacion = entrada.nextLine();
+        System.out.println("Ingrese la ciudad en la que reside");
+        String ciudad = entrada.nextLine();
         Persona p = new Persona(nombre, apellidos, identificacion, ciudad);
         System.out.println("Ingrese la marca del celular");
         String marcaCelular = entrada.nextLine();
@@ -116,10 +102,17 @@ public class Ejecutor {
 
     }
 
-    public static void PlanPostPagoMegas(ArrayList<PlanCelular> plan, String nombre,
-            String apellidos, String identificacion, String ciudad) {
+    public static void PlanPostPagoMegas(ArrayList<PlanCelular> plan) {
 
         Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese los nombres del cliente");
+        String nombre = entrada.nextLine();
+        System.out.println("Ingrese los apellidos del cliente");
+        String apellidos = entrada.nextLine();
+        System.out.println("Ingrese su identificación ");
+        String identificacion = entrada.nextLine();
+        System.out.println("Ingrese la ciudad en la que reside");
+        String ciudad = entrada.nextLine();
         Persona p = new Persona(nombre, apellidos, identificacion, ciudad);
         System.out.println("Ingrese la marca del celular");
         String marcaCelular = entrada.nextLine();
@@ -141,10 +134,17 @@ public class Ejecutor {
 
     }
 
-    public static void PlanPostPagoMinutosMegas(ArrayList<PlanCelular> plan, 
-            String nombre, String apellidos, String identificacion, String ciudad) {
+    public static void PlanPostPagoMinutosMegas(ArrayList<PlanCelular> plan) {
 
         Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese los nombres del cliente");
+        String nombre = entrada.nextLine();
+        System.out.println("Ingrese los apellidos del cliente");
+        String apellidos = entrada.nextLine();
+        System.out.println("Ingrese su identificación ");
+        String identificacion = entrada.nextLine();
+        System.out.println("Ingrese la ciudad en la que reside");
+        String ciudad = entrada.nextLine();
         Persona p = new Persona(nombre, apellidos, identificacion, ciudad);
         System.out.println("Ingrese la marca del celular");
         String marcaCelular = entrada.nextLine();
@@ -161,7 +161,7 @@ public class Ejecutor {
         System.out.println("Ingrese el costo por cada gigas");
         double costoGigas = entrada.nextDouble();
 
-        PlanPostPagoMinutosMegas planminutosmegas = new PlanPostPagoMinutosMegas(p, 
+        PlanPostPagoMinutosMegas planminutosmegas = new PlanPostPagoMinutosMegas(p,
                 marcaCelular, modeloCelular, numeroCelular, minutos, costoMinutos,
                 gigas, costoGigas);
 
@@ -169,12 +169,19 @@ public class Ejecutor {
 
     }
 
-    public static void PlanPostPagoMinutosEconomico(ArrayList<PlanCelular> plan,
-            String nombre, String apellidos, String identificacion, String ciudad) {
+    public static void PlanPostPagoMinutosEconomico(ArrayList<PlanCelular> plan) {
         Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese los nombres del cliente");
+        String nombre = entrada.nextLine();
+        System.out.println("Ingrese los apellidos del cliente");
+        String apellidos = entrada.nextLine();
+        System.out.println("Ingrese su identificación ");
+        String identificacion = entrada.nextLine();
+        System.out.println("Ingrese la ciudad en la que reside");
+        String ciudad = entrada.nextLine();
         Persona p = new Persona(nombre, apellidos, identificacion, ciudad);
         System.out.println("Ingrese la marca del celular");
-        String  marcaCelular = entrada.nextLine();
+        String marcaCelular = entrada.nextLine();
         System.out.println("Ingrese el modelo del celular");
         String modeloCelular = entrada.nextLine();
         System.out.println("Ingrese el número del celular");
@@ -190,13 +197,11 @@ public class Ejecutor {
         System.out.println("Ingrese el porcentaje de descuento");
         double porcentajeDescuento = entrada.nextDouble();
 
-        PlanPostPagoMinutosMegasEconomico planmegaseconomico = new 
-        PlanPostPagoMinutosMegasEconomico(p, marcaCelular, modeloCelular,
+        PlanPostPagoMinutosMegasEconomico planmegaseconomico = new PlanPostPagoMinutosMegasEconomico(p, marcaCelular, modeloCelular,
                 numeroCelular, minutos, costoMinutos, gigas, costoGigas,
                 porcentajeDescuento);
-        
+
         plan.add(planmegaseconomico);
-        
-        
+
     }
 }
